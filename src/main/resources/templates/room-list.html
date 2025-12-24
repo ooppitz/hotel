@@ -7,17 +7,22 @@
 <body>
 <h1>List of all rooms</h1>
 
-<div>
-    <ul>
-        <li th:each = "r : ${rooms}">
-            <span>
-            <span>Number: <span th:text="${r.number}"></span></span>
-            <span>Floor: <span th:text="${r.floor}"></span></span>
-            <span>Features: <span th:text="${r.features}"></span></span>
-            </span>
-        </li>
-    </ul>
-</div>
+<table border="2">
+    <thead>
+    <tr>
+        <th>Number</th>
+        <th>Floor</th>
+        <th>Features</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="r : ${rooms}">
+        <td th:text="${r.number}"></td>
+        <td th:text="${r.floor}"></td>
+        <td th:text="${r.features}"></td>
+    </tr>
+    </tbody>
+</table>
 
 
 </p>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit your name</title>
+</head>
+<body>
+<h1>Edit your name</h1>
+<form action="#" th:action="@{/update-name}" method="post">
+    <label for="name">Your name:</label>
+    <input type="text" id="name" name="name" th:value="${user.name}" />
+    <input type="submit" value="Save" />
+</form>
+</body>
+</html>

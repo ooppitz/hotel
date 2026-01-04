@@ -56,9 +56,6 @@ public class HotelApplication {
             Room room532 = repository.findByNumber("532");
             logger.info(room532.toString());
 
-
-
-
             logger.info("");
         };
     }

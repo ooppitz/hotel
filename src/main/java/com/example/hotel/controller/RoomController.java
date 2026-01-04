@@ -35,4 +35,11 @@ public class RoomController {
         return "room-list";
     }
 
+    @GetMapping("/edit/{id}")
+    String editRoom(@PathVariable("id") String roomId, Model model){
+
+        Room room532 = service.findByNumber(roomId);
+        model.addAttribute("room", room532);
+        return "room-edit";
+    }
 }

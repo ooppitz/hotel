@@ -22,4 +22,12 @@ public class RoomService {
     public List<Room> getRooms(){
         return repository.findAll();
     }
+
+    public Room updateRoom(Long id, String features){
+        Room room = repository.findById(id).orElseThrow( () -> new RuntimeException("Room not found"));
+        room.setFeatures(features);
+        return repository.save(room);
+    }
 }
+
+

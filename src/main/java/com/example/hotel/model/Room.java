@@ -48,4 +48,8 @@ public class Room {
     public String getFeatures() {
         return features;
     }
+
+    public void setFeatures(String features) {
+        this.features = features;
+    }
 }

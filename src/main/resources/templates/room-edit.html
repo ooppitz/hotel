@@ -12,10 +12,10 @@
     <!-- features -->
 
     <label for="number">Room number:</label><br>
-    <input type="text" id="number" name="number"><br>
+    <input type="text" id="number" name="number" th:value="${room.number}"><br>
 
     <label for="features">Features:</label><br>
-    <input type="text" id="features" name="features"><br>
+    <input type="text" id="features" name="features" th:value="${room.features}"><br>
 
     <input type = "submit" value = "Save"/>
 

@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <title>Edit room</title>
 </head>
 <body>
-<form action="#" th:action="@{/rooms/room-update}" method="post">
 
-    <!-- number -->
-    <!-- features -->
+<h1>Edit Room</h1>
 
-    <label for="number">Room number:</label><br>
-    <input type="text" id="number" name="number" th:value="${room.number}"><br>
+<form action="#"  th:action="@{/rooms/room-update/{number}(number=${room.number})}" method = "post">
+    <div>
+        <label>Room number:</label>
+        <span th:text="${room.number}"></span> <br> <br>
+    </div>
 
     <label for="features">Features:</label><br>
-    <input type="text" id="features" name="features" th:value="${room.features}"><br>
+    <input type="text" id="features" name="features" style="width: 300px" th:value="${room.features}"><br><br>
 
-    <input type = "submit" value = "Save"/>
+    <input type="submit" value="Save"/>
 
 </form>
 </body>

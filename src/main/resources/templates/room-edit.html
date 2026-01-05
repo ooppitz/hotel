@@ -9,7 +9,7 @@
 
 <h1>Edit Room</h1>
 
-<form action="#"  th:action="@{/rooms/room-update/{number}(number=${room.number})}" method = "post">
+<form action="#"  th:action="@{/rooms/update/{number}(number=${room.number})}" method = "post">
     <div>
         <label>Room number:</label>
         <span th:text="${room.number}"></span> <br> <br>

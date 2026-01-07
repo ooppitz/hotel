@@ -1,9 +1,7 @@
 package com.example.hotel.controller;
 
 import com.example.hotel.model.Room;
-import com.example.hotel.repository.RoomRepository;
 import com.example.hotel.service.RoomService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -51,3 +49,5 @@ public class RoomController {
     }
 
 }
+/// localhost:8082/rooms/all
+

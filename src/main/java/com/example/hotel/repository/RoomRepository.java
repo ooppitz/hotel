@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 public interface RoomRepository extends JpaRepository<Room, Long> {
 
     public Room findByNumber(String number);
+
     List<Room> findByFloor(int floor);
+
     Room findById(long id);
 
 }

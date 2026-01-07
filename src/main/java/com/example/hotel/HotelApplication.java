@@ -1,7 +1,9 @@
 package com.example.hotel;
 
 import com.example.hotel.model.Room;
+import com.example.hotel.model.User;
 import com.example.hotel.repository.RoomRepository;
+import com.example.hotel.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -17,6 +19,24 @@ public class HotelApplication {
     public static void main(String[] args) {
 		SpringApplication.run(HotelApplication.class, args);
 	}
+
+    @Bean
+    public CommandLineRunner createUsers(UserRepository repository) {
+        return (args) -> {
+            // save a few rooms
+            repository.save(new User("Albert Einstein", "einstein@eth.ch"));
+            repository.save(new User("Niels Bohr", "niels@bohr.dk"));
+
+            // fetch all customers
+            logger.info("Rooms found with findAll():");
+            logger.info("-------------------------------");
+            repository.findAll().forEach(user -> {
+                logger.info(user.toString());
+            });
+            logger.info("");
+
+        };
+    }
 
     @Bean
     public CommandLineRunner demo(RoomRepository repository) {

@@ -48,6 +48,14 @@ public class RoomController {
         return "room-edit";
     }
 
+
+    @GetMapping("/editnew/{id}")
+    String editRoomNew(){
+
+        return "room-edit-new"; // Name of the template (no ".html")
+    }
+
+
     @PostMapping("/update/{number}")
     public String updateRoom(@PathVariable("number") String number, @RequestParam("features") String features) {
         Room room = service.findByNumber(number);

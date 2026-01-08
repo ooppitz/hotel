@@ -19,10 +19,10 @@ public class RoomController {
     }
 
     @GetMapping("/{id}")
-    String getRoom(@PathVariable("id") String roomId, Model model){
+    String getRoom(@PathVariable("id") String roomId, Model context){
 
         Room room532 = service.findByNumber(roomId);
-        model.addAttribute("room", room532);
+        context.addAttribute("raum", room532);
         return "room";
     }
 
@@ -31,6 +31,13 @@ public class RoomController {
         List<Room> allRooms = service.getRooms();
         model.addAttribute("rooms", allRooms);
         return "room-list";
+    }
+
+    @GetMapping("/all-colored")
+    String getAllColored(Model model){
+        List<Room> allRooms = service.getRooms();
+        model.addAttribute("rooms", allRooms);
+        return "room-list-colored";
     }
 
     @GetMapping("/edit/{id}")

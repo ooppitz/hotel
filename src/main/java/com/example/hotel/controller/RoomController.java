@@ -48,23 +48,32 @@ public class RoomController {
         return "room-edit";
     }
 
-
-    @GetMapping("/editnew/{id}")
-    String editRoomNew(Model context){
-
-        Room room = service.findByNumber("532");
-        context.addAttribute("room", room);
-        return "room-edit-new"; // Name of the template (no ".html")
-    }
-
-
     @PostMapping("/update/{number}")
-    public String updateRoom(@PathVariable("number") String number, @RequestParam("features") String features) {
+    public String updateRoom(@PathVariable("number") String number,
+                             @RequestParam("features") String features) {
         Room room = service.findByNumber(number);
         service.updateRoom(room.getId(), features);
         return "redirect:/rooms/all"; // List all rooms with update data
     }
 
+
+
+    @GetMapping("/editnew/{id}")
+    String editRoomNew(@PathVariable("id") String roomNumber, Model context){
+
+        Room room = service.findByNumber(roomNumber);
+        context.addAttribute("room", room);
+        return "room-edit-new"; // Name of the template (no ".html")
+    }
+
+    @PostMapping("/updatenew/{number}")
+    public String updateRoomNew(@PathVariable("number") String number,
+                                @RequestParam("features") String features) {
+
+        Room room = service.findByNumber(number);
+        service.updateRoom(room.getId(), features);
+        return "redirect:/rooms/all"; // List all rooms with update data
+    }
 }
 /// localhost:8082/rooms/all
 

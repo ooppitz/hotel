@@ -50,8 +50,10 @@ public class RoomController {
 
 
     @GetMapping("/editnew/{id}")
-    String editRoomNew(){
+    String editRoomNew(Model context){
 
+        Room room = service.findByNumber("532");
+        context.addAttribute("room", room);
         return "room-edit-new"; // Name of the template (no ".html")
     }
 

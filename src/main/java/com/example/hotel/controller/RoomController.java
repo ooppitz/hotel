@@ -68,7 +68,7 @@ public class RoomController {
 
     @PostMapping("/updatenew/{number}")
     public String updateRoomNew(@PathVariable("number") String number,
-                                @RequestParam("features") String features) {
+                                @RequestParam("feature-param") String features) {
 
         Room room = service.findByNumber(number);
         service.updateRoom(room.getId(), features);

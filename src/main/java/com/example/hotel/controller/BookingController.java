@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,18 +23,27 @@ public class BookingController {
     }
 
     @GetMapping("/{id}")
-    String getRoom(@PathVariable("id") Long id, Model context){
+    String getRoom(@PathVariable("id") Long id, Model context) {
         Optional<Booking> booking = service.findById(id);
         context.addAttribute("booking", booking);
         return "room";
     }
 
     @GetMapping("/all")
-    String getAll(Model model){
-        List<Booking> allRooms = service.getBookings();
-        model.addAttribute("bookings", allRooms);
+    String getAll(Model model) {
+        List<Booking> allBookings = service.getBookings();
+        model.addAttribute("bookings", allBookings);
+
+        LocalDate startDate = LocalDate.of(2026, 1, 1);
+        LocalDate endDate = LocalDate.of(2026, 1, 31);
+        List<Booking> bookingsInMonth = service.findBookingsInRange( startDate, endDate);
+        model.addAttribute("bookingsInMonth", bookingsInMonth);
+        model.addAttribute("startDate", startDate);
+        model.addAttribute("endDate", endDate);
+
         return "booking-list";
     }
+
 
 }
 

@@ -56,8 +56,6 @@ public class RoomController {
         return "redirect:/rooms/all"; // List all rooms with update data
     }
 
-
-
     @GetMapping("/editnew/{id}")
     String editRoomNew(@PathVariable("id") String roomNumber, Model context){
 

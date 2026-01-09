@@ -33,11 +33,12 @@ public class HotelApplication {
             Room room2 = new Room(9, "908", "TV, Doppelzimmer, Meerblick");
 
             Booking booking1 = new Booking(room1, user,
-                    LocalDate.of(2026,2,1),
-                    LocalDate.of(2026,2,5));
+                    LocalDate.of(2026,1,2),
+                    LocalDate.of(2026,1,5));
+
             Booking booking2 = new Booking(room2, user,
-                    LocalDate.of(2026,2,1),
-                    LocalDate.of(2026,2,5));
+                    LocalDate.of(2026,3,2),
+                    LocalDate.of(2026,3,5));
 
             roomRepo.save(room1);
             roomRepo.save(room2);

@@ -9,14 +9,15 @@
 
 <h1>Edit Room</h1>
 
-<form action="#"  th:action="@{/rooms/update/{number}(number=${room.number})}" method = "post">
-    <div>
-        <label>Room number:</label>
-        <span th:text="${room.number}"></span> <br> <br>
-    </div>
+<div>
+    <label>Room number:</label>
+    <span th:text="${room.number}"></span> <br> <br>
+</div>
+
+<form th:action="@{/rooms/update/{number}(number=${room.number})}" method = "post">
 
     <label for="features">Features:</label><br>
-    <input type="text" id="features" name="features" style="width: 300px" th:text="${room.features}"><br><br>
+    <input type="text" id="features" name="features" style="width: 300px" th:value="${room.features}"><br><br>
 
     <input type="submit" value="Save"/>
 

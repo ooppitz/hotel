@@ -3,35 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/headlines.css">
-
-
 </head>
 <body>
 <h1>List of all rooms</h1>
 
-<!-- Hauptüberschrift -->
-<h1>Willkommen auf der Beispielseite</h1>
-
-
-<table border = "2">
+<table border ="2">
     <thead>
     <tr>
         <th>Number</th>
         <th>Floor</th>
-        <th>Features</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="r : ${rooms}">
-        <td th:text="${r.number}"></td>
-        <td th:text="${r.floor}"></td>
-        <td th:text="${r.features}"></td>
+    <tr th:each="u : ${users}">
+        <td th:text="${u.name}"></td>
+        <td th:text="${u.email}"></td>
     </tr>
     </tbody>
 </table>
-
-
 
 </body>
 </html>

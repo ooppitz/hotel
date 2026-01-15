@@ -1,0 +1,14 @@
+.styled-table {
+    border-collapse: collapse; /* Ensure borders collapse to form a grid */
+    width: 100%; /* Optional for full width */
+}
+
+.styled-table th, .styled-table td {
+    border: 2px solid green; /* Replace with desired border color */
+    padding: 8px; /* Optional for padding */
+    text-align: left; /* Optional for text alignment */
+}
+
+.styled-table th {
+    background-color: #f2f2f2; /* Optional: Style for table header */
+}

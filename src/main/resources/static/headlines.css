@@ -1,0 +1,13 @@
+h1 {
+    color: #2c3e50;
+}
+
+h2 {
+    color: #8eFF00;
+}
+
+
+h1, h2 {
+     font: 30px "Comic Sans MS";
+     text-decoration: underline;
+}

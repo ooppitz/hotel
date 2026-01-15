@@ -15,7 +15,11 @@ public class UserService {
         this.repository = repository;
     }
 
-    public User getUser(Long id){
+    public User getUser(Long id) {
+        return repository.findById(id).orElse(null);
+    }
+
+    public User getUserProxy(Long id){
         User user = repository.getReferenceById(id);
         return user;
     }

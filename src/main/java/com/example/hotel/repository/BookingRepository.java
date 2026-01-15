@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Long> {
@@ -16,7 +17,7 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     public List<Booking> findByRoom(Room room);
 
-    public Booking findById(long id);
+    public Optional<Booking> findById(long id);
 
     List<Booking> findByStartDateGreaterThanEqualAndEndDateLessThanEqual(LocalDate startDate, LocalDate endDate);
 

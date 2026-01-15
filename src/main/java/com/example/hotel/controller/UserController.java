@@ -21,6 +21,8 @@ public class UserController {
         this.service = service;
     }
 
+    // Test-Link: http://localhost:8082/users/1
+
     @GetMapping("/{id}")
     String getUser(@PathVariable("id") Long id, Model model){
 
@@ -30,7 +32,17 @@ public class UserController {
 
    }
 
-   @GetMapping("/all")
+    // Test-Link: http://localhost:8082/users/edit/1
+    @GetMapping("/edit/{id}")
+    String editUser(@PathVariable("id") Long id, Model model){
+
+        User user = service.getUser(id);
+        model.addAttribute("user", user);
+        return "user-edit";
+
+    }
+
+    @GetMapping("/all")
    String getAll(Model model) {
 
         List<User> users = service.getAll();
@@ -38,5 +50,4 @@ public class UserController {
         return "user-list";
 
    }
-
 }
